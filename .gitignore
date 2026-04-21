@@ -53,5 +53,6 @@ AGENTES.md
 /scripts/
 **/script/
 **/scripts/
+git.md
 
 *.mjs
