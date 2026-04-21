@@ -44,4 +44,14 @@ next-env.d.ts
 CLAUDE.md
 AGENTES.md
 
-/scripts
+# virtualenv
+.venv/
+.venv
+
+# sensitive script folders
+/script/
+/scripts/
+**/script/
+**/scripts/
+
+*.mjs
