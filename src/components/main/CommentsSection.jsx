@@ -110,6 +110,31 @@ export default function CommentsSection() {
     <section className="border border-green-900/60 bg-black/30 backdrop-blur-sm rounded-lg text-gray-200 font-mono px-6 py-8 h-full">
       <h2 className="text-green-400 mb-6 text-lg">Commentaires</h2>
 
+      <form onSubmit={handleSubmit} className="space-y-3 mb-4">
+        <input
+          type="text"
+          placeholder="votre nom"
+          value={form.commenterName}
+          onChange={(e) => setForm({ ...form, commenterName: e.target.value })}
+          className="w-full bg-black/40 border border-green-800 rounded px-3 py-2 text-sm focus:outline-none focus:border-green-400"
+        />
+        <textarea
+          placeholder="écrire un commentaire..."
+          value={form.body}
+          onChange={(e) => setForm({ ...form, body: e.target.value })}
+          rows={3}
+          className="w-full bg-black/40 border border-green-800 rounded px-3 py-2 text-sm focus:outline-none focus:border-green-400"
+        />
+        {error && <p className="text-red-400 text-sm">{error}</p>}
+        <button
+          type="submit"
+          disabled={submitting}
+          className="bg-green-600 hover:bg-green-500 disabled:opacity-50 text-black font-semibold px-4 py-2 rounded text-sm"
+        >
+          {submitting ? 'envoi...' : 'envoyer'}
+        </button>
+      </form>
+
       <div className="space-y-4 mb-6">
         {loading && <p className="text-gray-500">chargement...</p>}
         {!loading && comments.length === 0 && (
@@ -149,30 +174,7 @@ export default function CommentsSection() {
         </Pagination>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-3">
-        <input
-          type="text"
-          placeholder="votre nom"
-          value={form.commenterName}
-          onChange={(e) => setForm({ ...form, commenterName: e.target.value })}
-          className="w-full bg-black/40 border border-green-800 rounded px-3 py-2 text-sm focus:outline-none focus:border-green-400"
-        />
-        <textarea
-          placeholder="écrire un commentaire..."
-          value={form.body}
-          onChange={(e) => setForm({ ...form, body: e.target.value })}
-          rows={3}
-          className="w-full bg-black/40 border border-green-800 rounded px-3 py-2 text-sm focus:outline-none focus:border-green-400"
-        />
-        {error && <p className="text-red-400 text-sm">{error}</p>}
-        <button
-          type="submit"
-          disabled={submitting}
-          className="bg-green-600 hover:bg-green-500 disabled:opacity-50 text-black font-semibold px-4 py-2 rounded text-sm"
-        >
-          {submitting ? 'envoi...' : 'envoyer'}
-        </button>
-      </form>
+      
     </section>
   );
 }
