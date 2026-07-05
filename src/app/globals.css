@@ -1,6 +1,6 @@
 @import "tailwindcss";
 /* @import "tw-animate-css"; */
-@import "shadcn/tailwind.css";
+/* @import "shadcn/tailwind.css"; */
 
 /* @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap'); */
 @custom-variant dark (&:is(.dark *));
@@ -139,7 +139,12 @@
   }
   html {
     @apply font-sans;
+    scroll-behavior: smooth;
   }
+
+  section[id] {
+  scroll-margin-top: 6rem; /* adjust to match your nav's height + spacing */
+}
 
   /* CRT scanline overlay — applied to any element with .crt-scanlines */
   .crt-scanlines::before {

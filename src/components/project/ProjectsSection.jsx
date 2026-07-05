@@ -9,7 +9,7 @@ export default async function ProjectsSection() {
 
 
   return (
-    <section className="px-6 py-10">
+    <section className="px-6 py-10" id="projects">
       <div className="max-w-6xl mx-auto">
         <p className="text-xs tracking-widest mb-8" style={{ color: 'var(--chrome)' }}>
           [ {projects?.length ?? 0}  PROJECTS ]

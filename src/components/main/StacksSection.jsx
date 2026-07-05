@@ -9,7 +9,7 @@ export default async function StacksSection() {
 
 
   return (
-    <section className="px-6 py-20">
+    <section className="px-6 py-20" id='stacks'>
       <div className="max-w-6xl mx-auto">
         <p className="text-xs tracking-widest mb-8" style={{ color: 'var(--chrome)' }}>
           [ STACK ] — {stacks?.length ?? 0}

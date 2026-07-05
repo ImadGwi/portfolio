@@ -4,6 +4,46 @@ import StacksSection from '@/components/main/StacksSection';
 import ProjectsSection from '@/components/project/ProjectsSection';
 import CommentsAndMessage from '@/components/main/CommentsAndMessage';
 import { GridScan } from '@/components/motion/GridScan';
+import PillNav from '@/components/motion/PillNav';
+
+
+const items = [
+  {
+    label: 'home',
+    href: '#',
+    ariaLabel: 'Home',
+    rotation: -8,
+    hoverStyles: { bgColor: '#3b82f6', textColor: '#ffffff' }
+  },
+  {
+    label: 'about',
+    href: '#',
+    ariaLabel: 'About',
+    rotation: 8,
+    hoverStyles: { bgColor: '#10b981', textColor: '#ffffff' }
+  },
+  {
+    label: 'projects',
+    href: '#',
+    ariaLabel: 'Projects',
+    rotation: 8,
+    hoverStyles: { bgColor: '#f59e0b', textColor: '#ffffff' }
+  },
+  {
+    label: 'blog',
+    href: '#',
+    ariaLabel: 'Blog',
+    rotation: 8,
+    hoverStyles: { bgColor: '#ef4444', textColor: '#ffffff' }
+  },
+  {
+    label: 'contact',
+    href: '#',
+    ariaLabel: 'Contact',
+    rotation: -8,
+    hoverStyles: { bgColor: '#8b5cf6', textColor: '#ffffff' }
+  }
+];
 
 export default function HomePage() {
   return (
@@ -20,7 +60,7 @@ export default function HomePage() {
           lineThickness={1}
           linesColor="#2F293A"
           gridScale={0.05}
-          scanColor="#FF9FFC"
+          scanColor="#1326EE"
           scanOpacity={0.4}
           enablePost
           bloomIntensity={0.6}
@@ -36,13 +76,25 @@ export default function HomePage() {
       </div>
 
       {/* Page content */}
-      <div className="relative z-10">
+       <div className="relative z-10">
+  <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
+         <PillNav
+            items={[
+              { label: 'Accueil', href: '/' },
+              { label: 'Stacks' , href: '/#stacks'},
+              { label: 'Projets', href: '/#projects' },
+              { label: 'Contact', href: '/#comments' },
+              { label: 'À propos', href: '/#bio' },
+            ]}
+            activeHref="/"
+          />
+        </div>
         <BioSection />
         <StacksSection />
         <ProjectsSection />
         <CommentsAndMessage />
-
       </div>
+
     </main>
   );
 }

@@ -5,7 +5,7 @@ export default async function BioSection() {
   const { bio } = await getBio();
 
   return (
-    <section className="min-h-[70vh] flex flex-col justify-center px-6 py-16 crt-scanlines">
+    <section id="bio" className="min-h-[70vh] flex flex-col justify-center px-6 py-16 crt-scanlines">
       <div
         className="max-w-6xl mx-auto w-full rounded border backdrop-blur-sm"
         style={{ backgroundColor: 'color-mix(in srgb, var(--bg-pane) 45%, transparent)', borderColor: 'var(--border)' }}

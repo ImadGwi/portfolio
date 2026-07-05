@@ -107,7 +107,7 @@ export default function CommentsSection() {
   };
 
   return (
-    <section className="border border-green-900/60 bg-black/30 backdrop-blur-sm rounded-lg text-gray-200 font-mono px-6 py-8 h-full">
+    <section className="border border-green-900/60 bg-black/30 backdrop-blur-sm rounded-lg text-gray-200 font-mono px-6 py-8 h-full" id="comments">
       <h2 className="text-green-400 mb-6 text-lg">Commentaires</h2>
 
       <form onSubmit={handleSubmit} className="space-y-3 mb-4">
